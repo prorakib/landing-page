@@ -1,0 +1,85 @@
+
+/*-------------------------------------------------------
+13. Counter css 
+---------------------------------------------------------*/
+
+.counter-area {
+    margin-top: -12rem;
+    position: relative;
+    z-index: 5;
+}
+
+.counter-wpr {
+    padding: 5rem 4rem;
+    box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.1);
+    background-color: var(--clr-white);
+	border-radius: 25px;
+}
+
+.fun-fact {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+    gap: 3rem;
+	.fun-icon {
+		display: inline-block;
+	}
+	.fun-desc {
+		.timer {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 52px;
+            letter-spacing: 0em;
+            color: var(--clr-heading);
+			position: relative;
+			z-index: 1;
+			display: inline-block;
+            margin-bottom: 1.5rem;
+			padding-right: 3rem;
+			&::before {
+				position: absolute;
+				z-index: -1;
+				content: attr(data-count);
+				right: 0;
+				top: 0;
+			}
+		}
+		.medium {
+			position: relative;
+			z-index: 1;
+			font-family: var(--font-3);
+			font-size: 30px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 43px;
+			letter-spacing: 0em;
+			text-align: center;
+			display: block;
+
+		}
+	}
+}
+
+//Counter
+
+.counter-2 {
+	@include fd;
+	margin-top: 0;
+	.counter-wpr {
+		box-shadow: none;
+    	background-color: inherit;
+		.fun-fact {
+			.fun-desc {
+				.medium,
+				.timer {
+					color: var(--clr-white);
+				}
+			}
+		}
+	}
+}
+
+
+
+

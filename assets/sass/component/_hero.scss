@@ -1,0 +1,201 @@
+
+
+/*-------------------------------------------------------
+03. Hero css 
+---------------------------------------------------------*/
+
+@mixin hero {
+    height: 830px;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//Hero 1
+
+.hero-single {
+	position: relative;
+	z-index: 1;
+    @include hero;
+	&::before {
+		position: absolute;
+		z-index: -1;
+		height: 100%;
+		width: 100%;
+		background-color: #00008B;
+		opacity: .8;
+		top: 0;
+		left: 0;
+		content: '';
+	}
+    .hero-shape {
+        position: absolute;
+        top: -90px;
+        right: 0;
+        z-index: -1;
+    }
+	.hero-content {
+        .hero-title {
+            margin-bottom: 3rem;
+			color: var(--clr-white);
+			span{
+				color: #FFED48;
+				font-size: 4rem;
+				transition: .7s ease;
+				position: relative;
+				z-index: 1;
+				padding-right: 1rem;
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: auto;
+					right: 0;
+					width: 2px;
+					height: 100%;
+					background-color: currentColor;
+					transition: .7s ease;
+				}
+			}
+        }
+		.hero-sub-title {
+			margin-bottom: 2rem;
+			color: var(--clr-white);
+		}
+		
+		p {
+			color: var(--clr-white);
+			font-family: var(--font-3);
+            font-size: 37px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 53px;
+            letter-spacing: 0em;
+            text-align: center;
+
+		}
+		
+        .hero-btn {
+            justify-content: flex-start;
+            gap: 2rem;
+            line-height: 1;
+            // display: flex;
+            margin-top: 2rem;
+        }
+    }
+    .hero-right-pic {
+        text-align: center;
+    }
+}
+
+.hero-title {
+    font-family: var(--font-3);
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 72px;
+    letter-spacing: 0em;
+    text-align: center;
+    
+}
+
+.hero-sub-title {
+	font-family: var(--font-3);
+    font-size: 110px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 159px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.hero-rl-title {
+    font-size: 2.8rem;
+    color: #00FF2C;
+    display: block;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+//Animation
+
+/*text animation css*/
+/*.wodryRX{ width: 100%; display: block; float: right}*/
+//.hero-content {
+//	h3 {
+//		span{
+//			display: inline-block;
+//			width: 450px;
+//			color: #FFC75F;
+//			font-size: 4rem;
+//		}
+//	}
+//}
+.wodry-flipping {
+    display: inline-block;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin-x: 50%;
+}
+.wodry-flipping .front-face, .wodry-flipping .back-face {
+    display: inline-block;
+    position: relative;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.wodry-flipping .front-face {
+    position: absolute;
+}
+.wodry-flipping .back-face {
+    position: relative;
+}
+/*end text animation css*/
+
+//Hero Slider
+
+.hero-slider.owl-theme .owl-nav {
+    margin-top: 0px;
+}
+
+.hero-slider.owl-theme .owl-nav [class*=owl-] {
+    color:var(--clr-def);
+    font-size: 5rem;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.hero-slider.owl-theme .owl-nav [class*=owl-]:hover {
+    background: none;
+    color: var(--clr-def);
+    text-decoration: none;
+}
+
+.hero-slider.owl-theme .owl-nav .owl-prev {
+	left: 5rem;
+}
+
+.hero-slider.owl-theme .owl-nav .owl-next {
+	right: 5rem;
+}
+
+.hero-slider.owl-theme .owl-nav .owl-prev,
+.hero-slider.owl-theme .owl-nav .owl-next {
+	position: absolute;
+	top: 50%;
+	transform: translate(0,-50%);
+}
+

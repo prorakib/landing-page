@@ -1,0 +1,51 @@
+/*-------------------------------------------------------
+21. Footer css 
+---------------------------------------------------------*/
+
+footer {
+	background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+	position: relative;
+	z-index: 1;
+	&::before {
+		position: absolute;
+		z-index: -1;
+		height: 100%;
+		width: 100%;
+		background-color: #00008B;
+		opacity: .8;
+		top: 0;
+		left: 0;
+		content: '';
+	}
+}
+
+.footer-logo {
+	margin-bottom: 3rem;
+}
+
+.footer-text {
+	p {
+		margin-bottom: 3rem;
+		font-size: 2.2rem;
+		color: var(--clr-white);
+		line-height: 4.2rem;
+	}
+}
+
+//Copyright
+
+.copyright {
+	padding-top: 4rem;
+	padding-bottom: 3rem;
+	border-top: 1px solid rgba(255,255,255,.3);
+	p {
+		color: var(--clr-white);
+		font-size: 2rem;
+		letter-spacing: 1px;
+		.cp {
+			color: var(--clr-def);
+		}
+	}
+}
